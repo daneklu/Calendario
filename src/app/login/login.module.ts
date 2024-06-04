@@ -8,12 +8,15 @@ import { LoginPageRoutingModule } from './login-routing.module';
 
 import { LoginPage } from './login.page';
 
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+
 @NgModule({
   imports: [
     CommonModule,
     FormsModule,
     IonicModule,
-    LoginPageRoutingModule
+    LoginPageRoutingModule,
+    AngularFirestoreModule
   ],
   declarations: [LoginPage]
 })

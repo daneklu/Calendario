@@ -13,17 +13,14 @@
       <ion-label position="stacked">Name</ion-label>
       <ion-input [(ngModel)]="name"></ion-input>
     </ion-item>
-    <div class="form">
     <ion-item>
       <ion-label position="stacked">Email</ion-label>
       <ion-input [(ngModel)]="email"></ion-input>
     </ion-item>
-    <div class="form">
     <ion-item>
       <ion-label position="stacked">Password</ion-label>
-      <ion-input [(ngModel)]="password"></ion-input>
+      <ion-input type="password" [(ngModel)]="password"></ion-input>
     </ion-item>
-    <ion-button (click)="signup()" expan="block">SignUp</ion-button>
+    <ion-button (click)="signup()" expand="block">SignUp</ion-button>
   </div>
- 
 </ion-content>

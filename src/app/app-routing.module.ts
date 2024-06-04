@@ -20,7 +20,6 @@ const routes: Routes = [
     loadChildren: () => import('./singup/singup.module').then( m => m.SingupPageModule)
   },
 ];
-a
 @NgModule({
   imports: [
     RouterModule.forRoot(routes, { preloadingStrategy: PreloadAllModules })

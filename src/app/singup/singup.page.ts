@@ -3,11 +3,11 @@ import { FireserviceService } from '../fireservice.service';
 import { Router } from '@angular/router';
 
 @Component({
-  selector: 'app-signup',
-  templateUrl: './signup.page.html',
-  styleUrls: ['./signup.page.scss'],
+  selector: 'app-singup',
+  templateUrl: './singup.page.html',
+  styleUrls: ['./singup.page.scss'],
 })
-export class SignupPage implements OnInit {
+export class SingupPage implements OnInit {
   public email: any;
   public password: any;
   public name: any;
