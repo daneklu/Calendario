@@ -1,29 +1,26 @@
-
 import { Injectable } from '@angular/core';
-import { Auth, signInWithEmailAndPassword, createUserWithEmailAndPassword } from '@angular/fire/auth';
-import { Firestore, collection, doc, setDoc, getDoc } from '@angular/fire/firestore';
+import { AngularFireAuth } from '@angular/fire/compat/auth';
+import { AngularFirestore } from '@angular/fire/compat/firestore';
 
 @Injectable({
   providedIn: 'root'
 })
 export class FireserviceService {
-  constructor(private firestore: Firestore, private auth: Auth) { }
+  constructor(private firestore: AngularFirestore, private auth: AngularFireAuth) { }
 
   loginWithEmail(data: { email: string, password: string }) {
-    return signInWithEmailAndPassword(this.auth, data.email, data.password);
+    return this.auth.signInWithEmailAndPassword(data.email, data.password);
   }
 
   signup(data: { email: string, password: string }) {
-    return createUserWithEmailAndPassword(this.auth, data.email, data.password);
+    return this.auth.createUserWithEmailAndPassword(data.email, data.password);
   }
 
   saveDetails(data: any) {
-    const userRef = doc(this.firestore, 'users', data.uid);
-    return setDoc(userRef, data);
+    return this.firestore.collection('users').doc(data.uid).set(data);
   }
 
   getDetails(data: { uid: string }) {
-    const userRef = doc(this.firestore, 'users', data.uid);
-    return getDoc(userRef);
+    return this.firestore.collection('users').doc(data.uid).get();
   }
 }

@@ -23,9 +23,9 @@ export class LoginPage implements OnInit {
     this.fireService.loginWithEmail({ email: this.email, password: this.password }).then((res: any) => {
       console.log(res);
       if (res.user.uid) {
-        this.fireService.getDetails({ uid: res.user.uid }).then(
+        this.fireService.getDetails({ uid: res.user.uid }).subscribe(
           (doc: any) => {
-            if (doc.exists()) {
+            if (doc.exists) {
               const userData = doc.data();
               console.log(userData);
               alert('Welcome ' + userData['name']);
